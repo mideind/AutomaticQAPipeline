@@ -4,9 +4,9 @@ The input dataset is assumed to be a jsonl file with the following keys for each
 where "text" is the text to be used for creating questions and answers. 
 
 The pipeline consists of the following steps:
-1. Convert the documents to requests for GPT-4.
-2. Make API calls to GPT-4-turbo to generate questions and answers.
-3. Filter the generated questions and answers based on scores given by GPT-4.
+1. Convert the documents to requests for GPT.
+2. Make API calls to GPT to generate questions and answers.
+3. Filter the generated questions and answers based on scores given by GPT.
 4. Correct spelling and grammar in the questions and answers.
 5. Add information to the questions and answers.
 
@@ -27,10 +27,10 @@ import argparse
 def main(arguments):
 
     print("Converting documents to requests...")
-    doc_to_requests(arguments.dataset_path)
+    doc_to_requests(arguments.dataset_path, arguments.gpt_model)
 
-    print("Making API calls...")
-    make_API_call()
+    print(f"Making API calls with the {arguments.gpt_model} model...")
+    make_API_call(arguments.gpt_model)
 
     print("Filtering queries...")
     filter_queries()
@@ -58,6 +58,12 @@ if __name__ == "__main__":
         "--dataset-path",
         type=Path,
         help="Path to the dataset to create questions and answers from.",
+    )
+    parser.add_argument(
+        "--gpt-model",
+        type=str,
+        help="The GPT model to use.",
+        default="gpt-4-turbo",
     )
     parser.add_argument(
         "--skip-correction",

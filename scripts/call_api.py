@@ -5,7 +5,7 @@ from pathlib import Path
 client = OpenAI()
 
 
-def make_API_call():
+def make_API_call(gpt_model: str):
     """Makes an API call to the OpenAI API and writes the responses to a file."""
 
     with open("./data/extra-data/gpt_requests.jsonl", "r") as f:
@@ -15,7 +15,7 @@ def make_API_call():
         for request in requests:
 
             response = client.chat.completions.create(
-                model="gpt-4-turbo", messages=request["messages"]
+                model=gpt_model, messages=request["messages"]
             )
 
             output = response.choices[0].message.content
