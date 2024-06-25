@@ -1,3 +1,5 @@
+# Automatic QA Pipeline
+
 A pipeline to automatically generate questions and answers, which pertain to Icelandic culture and/or history, from a dataset.
 
 To run the script you will need a python3 environment, version 3.10.13 or older. Install the required dependencies by running
