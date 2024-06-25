@@ -17,7 +17,7 @@ The pipeline consists of the following steps:
 The pipeline can be run from the command line by running the following command:
 > python run_qa_pipe.py --dataset-path path/to/dataset
 
-The default GPT model which is used is 'gpt-4-turbo', but this can be changed by including the `gpt-model` flag with the relevant GPT model's name.
+The default GPT model which is used is 'gpt-4-turbo', but this can be changed by including the `gpt-model` flag with the relevant GPT model's name:
 > python run_qa_pipe.py --dataset-path path/to/dataset --gpt-model name-of-gpt-model
 
 In order to make an API call to GPT, you need an API key. Instructions on how to obtain such a key are in the [OpenAI API reference](https://platform.openai.com/docs/api-reference/authentication).
