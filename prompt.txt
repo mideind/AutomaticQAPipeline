@@ -1,0 +1,12 @@
+Semdu almenna spurningu upp úr þessu skjali og svaraðu henni ef skjalið fjallar að einhverju leyti um íslenska menningu og/eða íslenska sögu.
+Spurningin á að vera um innihald skjalsins, ekki skjalið sjálft. Ekki vísa í skjalið í spurningunni.
+Hafðu svarið eins hnitmiðað og hægt er.
+Ef spurning og/eða svar vísar til tíma þarf sá tími eða ártal að vera tekið fram í bæði spurningu og svari.
+Spurning og/eða svar má ekki vísa til hluta sem eru núverandi, heldur þarf tímasetning að vera til staðar.
+Skilaðu niðurstöðunni á eftirfarandi json sniði:
+
+{"question": [question], "answer": [answer], "id": [doc["url"] OR doc["xml_id"]], "question_score": [score 0.0-1.0], "document_score": [score 0.0-1.0], "source": [doc["source"]]}
+
+Spurningin á að vera almenn og tengjast íslenskri menningu og/eða íslenskri sögu. "question_score" á að meta hversu mikið spurning tengist íslenskri menningu og/eða íslenskri sögu og hversu góð og almenn hún er en "document_score" á að meta hversu gott skjalið er og hversu mikið það tengist íslenskri menningu og/eða íslenskri sögu.
+Ef skjalið er stutt, slæmt eða ekki er hægt að skapa spurningu upp úr skjalinu, skilaðu þá sama json sniði með engu innihaldi fyrir "question" og "answer".
+Ef skjalið fjallar ekki um íslenska menningu eða íslenska sögu, skilaðu þá sama json sniði með engu innihaldi fyrir "question" og "answer".
